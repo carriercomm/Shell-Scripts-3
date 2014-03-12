@@ -1,4 +1,3 @@
-```
 #!/bin/bash
 #  This is just a simple shell script to remove
 #  any iMessage logs that may be sitting around
@@ -95,4 +94,3 @@
 	echo ""
   fi
 )
-```

@@ -16,20 +16,23 @@
   		sleep .2
 	done
   	echo --- Found iMessage Logs!
+  	# just some basic user feedback here..
   	for i in 1 2 3
 	do
    		echo ---
   		sleep .1
 	done
+	# Files have been found, prompt user to choose to delete or not
   	read -p "--- Are you sure want to delete iMessage logs, and any attachments (y/n)? " -n 1 -r
   	echo ""
   	echo ""
   	echo "- Finding chat.* files- deleting: "
+  	# User chose to delete- lets delete that shit
   	rm -r ~/Library/Messages/chat.*
   	echo ""
   	echo "- Looking for attachments "
   	rm -r ~/Library/Messages/Attachments/*
-
+	# now lets recurse through the attachments folder and delete everything
   	found_attach=''
 	  for attach_file in ~/Library/Messages/Attachments/* ; do
 	    if [[ -s "$attach_file" ]] ; then
@@ -42,7 +45,7 @@
 	fi
 	echo ""
   	echo "- Finding any extra log files- deleting:"
-    rm -r ~/Library/Messages/*
+    	rm -r ~/Library/Messages/*
   else
   	echo ""
 	echo ""
@@ -51,3 +54,5 @@
 	echo ""
   fi
 )
+
+# PROFIT

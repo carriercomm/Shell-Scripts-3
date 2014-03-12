@@ -15,7 +15,7 @@
    		echo ---
   		sleep .2
 	done
-  	echo --- Found iMessage Logs!
+  	echo - Found iMessage Logs!
   	for i in 1 2 3
 	do
    		echo ---
@@ -42,15 +42,15 @@
 
     # delete all files *.*
     echo "- Finding any extra log files and deleting them.."
+
     for file in ~/Library/Messages/* ; do
       if [[ -s "$file" ]] ; then
         rm -r ~/Library/Messages/*
       fi
     done
-    for i in 1 2 3 4 5 6 
-    do
-      echo ---
-      sleep .2
+    for i in 1 2
+      do
+       echo ""
     done
     for file in ~/Library/Messages/*.* ; do
       if [[ -s "$file" ]] ; then
@@ -61,7 +61,15 @@
 
 
     # recurse through attachments, if they exist, and delete them
+    for i in 1 2
+      do
+       echo ""
+    done
   	echo "- Looking for attachments "
+    for i in 1 2
+      do
+       echo ""
+    done
   	found_attach=''
 	  for attach_file in ~/Library/Messages/Attachments/* ; do
 	    if [[ -s "$attach_file" ]] ; then

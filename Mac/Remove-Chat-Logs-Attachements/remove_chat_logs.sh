@@ -2,7 +2,7 @@
 #  any iMessage logs that may be sitting around
 #	-Josh Pope
 (
-  echo --- Searching for iMessage chat logs and attachments
+  
   found_logs=''
   for file in ~/Library/Messages/* ; do
     if [[ -s "$file" ]] ; then
@@ -16,36 +16,67 @@
   		sleep .2
 	done
   	echo --- Found iMessage Logs!
-  	# just some basic user feedback here..
   	for i in 1 2 3
 	do
    		echo ---
   		sleep .1
 	done
-	# Files have been found, prompt user to choose to delete or not
-  	read -p "--- Are you sure want to delete iMessage logs, and any attachments (y/n)? " -n 1 -r
-  	echo ""
-  	echo ""
-  	echo "- Finding chat.* files- deleting: "
-  	# User chose to delete- lets delete that shit
-  	rm -r ~/Library/Messages/chat.*
-  	echo ""
+    read -p "--- Are you sure want to delete iMessage logs, and any attachments (y/n)? " RESP
+    if [ "$RESP" = "y" ]; then
+    for i in 1 2
+
+      do
+  	   echo ""
+  	done
+    echo "- Finding chat logs and deleting them.."
+    for file in ~/Library/Messages/chat.* ; do
+      if [[ -s "$file" ]] ; then
+        rm -r ~/Library/Messages/chat.*
+      fi
+    done
+  	
+  	for i in 1 2
+      do
+       echo ""
+    done
+
+    # delete all files *.*
+    echo "- Finding any extra log files and deleting them.."
+    for file in ~/Library/Messages/* ; do
+      if [[ -s "$file" ]] ; then
+        rm -r ~/Library/Messages/*
+      fi
+    done
+    for i in 1 2 3 4 5 6 
+    do
+      echo ---
+      sleep .2
+    done
+    for file in ~/Library/Messages/*.* ; do
+      if [[ -s "$file" ]] ; then
+        rm -r ~/Library/Messages/*.*
+      fi
+    done
+    echo - Searching for any leftover log files that may be present..
+
+
+    # recurse through attachments, if they exist, and delete them
   	echo "- Looking for attachments "
-  	rm -r ~/Library/Messages/Attachments/*
-	# now lets recurse through the attachments folder and delete everything
   	found_attach=''
 	  for attach_file in ~/Library/Messages/Attachments/* ; do
 	    if [[ -s "$attach_file" ]] ; then
 	      found_attach=1
 	    fi
 	  done
-	if [[ "$found_attach" ]] ; then
-		echo "--- Found attachments, deleting them "
-		rm -r ~/Library/Messages/Attachments/*
-	fi
+	 if [[ "$found_attach" ]] ; then
+		    echo "--- Found attachments, deleting them "
+		    echo "     "; rm -r ~/Library/Messages/Attachments/*
+	 fi
 	echo ""
-  	echo "- Finding any extra log files- deleting:"
-    	rm -r ~/Library/Messages/*
+  
+  	else
+      echo "You chose not to continue.. Ok, dude."
+    fi
   else
   	echo ""
 	echo ""
@@ -54,5 +85,3 @@
 	echo ""
   fi
 )
-
-# PROFIT

@@ -1,0 +1,53 @@
+#  This is just a simple shell script to remove
+#  any iMessage logs that may be sitting around
+#	-Josh Pope
+(
+  echo --- Searching for iMessage chat logs and attachments
+  found_logs=''
+  for file in ~/Library/Messages/* ; do
+    if [[ -s "$file" ]] ; then
+      found_logs=1
+    fi
+  done
+  if [[ "$found_logs" ]] ; then
+    for i in 1 2 3 4 5 6 
+	do
+   		echo ---
+  		sleep .2
+	done
+  	echo --- Found iMessage Logs!
+  	for i in 1 2 3
+	do
+   		echo ---
+  		sleep .1
+	done
+  	read -p "--- Are you sure want to delete iMessage logs, and any attachments (y/n)? " -n 1 -r
+  	echo ""
+  	echo ""
+  	echo "- Finding chat.* files- deleting: "
+  	rm -r ~/Library/Messages/chat.*
+  	echo ""
+  	echo "- Looking for attachments "
+  	rm -r ~/Library/Messages/Attachments/*
+
+  	found_attach=''
+	  for attach_file in ~/Library/Messages/Attachments/* ; do
+	    if [[ -s "$attach_file" ]] ; then
+	      found_attach=1
+	    fi
+	  done
+	if [[ "$found_attach" ]] ; then
+		echo "--- Found attachments, deleting them "
+		rm -r ~/Library/Messages/Attachments/*
+	fi
+	echo ""
+  	echo "- Finding any extra log files- deleting:"
+    rm -r ~/Library/Messages/*
+  else
+  	echo ""
+	echo ""
+    echo --- No iMessage logs exist on this computer!
+    echo ""
+	echo ""
+  fi
+)

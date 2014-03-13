@@ -5,13 +5,21 @@
 (
   
   found_logs=''
+  # check the user library messages folder, which will contain all iMessage logs from MacOS 
   for file in ~/Library/Messages/* ; do
     if [[ -s "$file" ]] ; then
       found_logs=1
     fi
-  done
-  if [[ "$found_logs" ]] ; then
-    for i in 1 2 3 4 5 6 
+    done
+    # check the iOS messages archive folder, which will contain all iMessage logs from iOS saved in MacOS format
+  for file2 in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/* ; do
+    if [[ -s "$file2" ]] ; then
+       found_logs=1
+    fi
+    done
+  
+  if [[ "$found_logs" ]]  ; then
+    for i in 1 2 3 4 5
 	do
    		echo ---
   		sleep .2
@@ -25,9 +33,8 @@
     read -p "--- Are you sure want to delete iMessage logs, and any attachments (y/n)? " RESP
     if [ "$RESP" = "y" ]; then
     for i in 1 2
-
-      do
-  	   echo ""
+      	do
+  	   	echo ""
   	done
     echo "- Finding chat logs and deleting them.."
     for file in ~/Library/Messages/chat.* ; do
@@ -35,22 +42,18 @@
         rm -r ~/Library/Messages/chat.*
       fi
     done
-  	
   	for i in 1 2
-      do
-       echo ""
+      	do
+       	echo ""
     done
-
-    # delete all files *.*
-    echo "- Finding any extra log files and deleting them.."
-
+    echo " "; echo --- Removing all log files that may have been missed; echo " ";
     for file in ~/Library/Messages/* ; do
       if [[ -s "$file" ]] ; then
         rm -r ~/Library/Messages/*
       fi
     done
     for i in 1 2
-      do
+       do
        echo ""
     done
     for file in ~/Library/Messages/*.* ; do
@@ -58,9 +61,15 @@
         rm -r ~/Library/Messages/*.*
       fi
     done
+    echo ""
+    echo - Searching for iOS device iMesssage log archives..
+	for file in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/* ; do
+      if [[ -s "$file" ]] ; then
+      	echo " "; echo --- Removing iOS iMessage archive; echo " ";
+        rm -r ~/Library/Containers/com.apple.iChat/Data/Library/Messages/*
+      fi
+    done
     echo - Searching for any leftover log files that may be present..
-
-
     # recurse through attachments, if they exist, and delete them
     for i in 1 2
       do
@@ -76,17 +85,16 @@
 	    if [[ -s "$attach_file" ]] ; then
 	      found_attach=1
 	    fi
-	  done
+	 done
 	 if [[ "$found_attach" ]] ; then
-		    echo "--- Found attachments, deleting them "
-		    echo "     "; rm -r ~/Library/Messages/Attachments/*
+	 	echo " "; echo --- Removing all attachments; echo " ";
+		echo "     "; rm -r ~/Library/Messages/Attachments/*
 	 fi
 	echo ""
-  
-  	else
+    else
       echo "You chose not to continue.. Ok, dude."
     fi
-  else
+    else
   	echo ""
 	echo ""
     echo --- No iMessage logs exist on this computer!

@@ -71,7 +71,7 @@
     done
     echo - Searching for any leftover log files that may be present..
     # recurse through attachments, if they exist, and delete them
-    for i in 1 2
+    for i in 1aa
       do
        echo ""
     done

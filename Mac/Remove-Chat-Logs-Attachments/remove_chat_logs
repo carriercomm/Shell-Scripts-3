@@ -48,7 +48,7 @@
       	do echo ""
   	done
 
-	# Deleting iMessage chat logs
+    # Deleting iMessage chat logs
     echo "###  Finding chat logs and deleting them ###"
     for file in ~/Library/Messages/chat.* ; do
       if [[ -s "$file" ]] ; then
@@ -81,13 +81,13 @@
     echo "###  Searching for iOS device iMesssage log archives ###"
 
     # Start deleting logs and attachments for iOS iMessage logs
-	for file in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/* ; do 
+    for file in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/* ; do 
       if [[ -s "$file" ]] ; then
       	echo " "; echo "     Removing iOS iMessage archive"; echo " ";
         rm -r ~/Library/Containers/com.apple.iChat/Data/Library/Messages/*
       fi
       echo "     -- Deleting one found log file --"
-	  echo ""
+      echo ""
     done
 
     echo "###  Searching for any leftover log files that may be present ###"
@@ -109,14 +109,13 @@
 	      found_attach=1
 	    fi
 	echo "     -- Deleting one found log file --"
-    echo ""
+        echo ""
 	done
 
 	if [[ "$found_attach" ]] ; then
 	 	echo " "; echo "     Removing all attachments"; echo " ";
 		echo "     "; rm -r ~/Library/Messages/Attachments/*
 	fi
-
 	echo ""
 
     else

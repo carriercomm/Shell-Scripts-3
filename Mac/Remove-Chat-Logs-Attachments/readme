@@ -4,13 +4,13 @@ To use, save the file to your DESKTOP as simply "remove_chat_logs" (no extension
 
 Then open terminal, and type this in:
 
-# chmod -x $HOME/Desktop/remove_chat_logs
+# chmod +x $HOME/Desktop/remove_chat_logs
     please note: if for some strange reason you do not have the path variable $HOME defined, 
     just change the above line to read:
-    # chmod -x "/Users/YOURNAMEHERE/Desktop/remove_chat_logs"
+    # chmod +x "/Users/YOURNAMEHERE/Desktop/remove_chat_logs"
     
     
-If it does not turn into an executable file.. Then run this command in terminal to execute the script:
+If for some reason it does not turn into an executable file (it should).. Then run this command in terminal to execute the script:
 
 # open -b com.apple.terminal $HOME/Desktop/remove_chat_logs
 

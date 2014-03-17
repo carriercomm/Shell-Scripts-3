@@ -1,7 +1,33 @@
 #!/bin/bash
-#  This is just a simple shell script to remove
-#  any iMessage logs that may be sitting around
-#	-Josh Pope
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#     ___          ___           ___           ___     
+#    /  /\        /  /\         /  /\         /__/\    
+#   /  /:/       /  /::\       /  /:/_        \  \:\   
+#  /__/::\      /  /:/\:\     /  /:/ /\        \__\:\  
+#  \__\/\:\    /  /:/  \:\   /  /:/ /::\   ___ /  /::\ 
+#     \  \:\  /__/:/ \__\:\ /__/:/ /:/\:\ /__/\  /:/\:\
+#      \__\:\ \  \:\ /  /:/ \  \:\/:/~/:/ \  \:\/:/__\/
+#      /  /:/  \  \:\  /:/   \  \::/ /:/   \  \::/     
+#     /__/:/    \  \:\/:/     \__\/ /:/     \  \:\     
+#     \__\/      \  \::/        /__/:/       \  \:\    
+#                 \__\/         \__\/         \__\/    
+#       ___         ___           ___         ___     
+#      /  /\       /  /\         /  /\       /  /\    
+#     /  /::\     /  /::\       /  /::\     /  /:/_   
+#    /  /:/\:\   /  /:/\:\     /  /:/\:\   /  /:/ /\  
+#   /  /:/~/:/  /  /:/  \:\   /  /:/~/:/  /  /:/ /:/_ 
+#  /__/:/ /:/  /__/:/ \__\:\ /__/:/ /:/  /__/:/ /:/ /\
+#  \  \:\/:/   \  \:\ /  /:/ \  \:\/:/   \  \:\/:/ /:/
+#   \  \::/     \  \:\  /:/   \  \::/     \  \::/ /:/ 
+#    \  \:\      \  \:\/:/     \  \:\      \  \:\/:/  
+#     \  \:\      \  \::/       \  \:\      \  \::/   
+#      \__\/       \__\/         \__\/       \__\/   
+# 
+#
+#  »»»  This is just a simple shell script to remove
+#       any iMessage logs that may be sitting around
+#       -Josh Pope
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 (
     # state boolean var, triggers true if message logs are found in either iMessage log storage locations use in MacOS
     found_logs=''
@@ -23,30 +49,30 @@
     # Done searching iOS iMessage log folder
     # if logs were found, print user feedback to let them know and choose to delete them or not
     if [[ "$found_logs" ]]  ; then
-  	for i in 1 2 3
-	    do
-	        echo ---
-	  	sleep .2	
-	done
+    for i in 1 2 3
+      do
+          echo ---
+      sleep .2  
+  done
 
-  	echo "     Found iMessage Logs!"
-  	for i in 1 2 3
-	    do
-	   	echo ---
-	  	sleep .1
-	done
+    echo "     Found iMessage Logs!"
+    for i in 1 2 3
+      do
+      echo ---
+      sleep .1
+  done
 
-	# User respponse- if logs are found, this message displays an option to delete them or to stop application now before anything is removed
-	echo "";
-	echo "#############################################################################";
+  # User respponse- if logs are found, this message displays an option to delete them or to stop application now before anything is removed
+  echo "";
+  echo "#############################################################################";
     read -p "### Are you sure want to delete iMessage logs, and any attachments (y/n)? ###
 #############################################################################
 (type y or n): " RESP
-	# User chose to delete, start deleting processes
+  # User chose to delete, start deleting processes
     if [ "$RESP" = "y" ]; then
     for i in 1 2
-      	do echo ""
-  	done
+        do echo ""
+    done
 
     # Deleting iMessage chat logs
     echo "###  Finding chat logs and deleting them ###"
@@ -79,11 +105,11 @@
 
     # Let the user know we're now searching for iOS logs
     echo "###  Searching for iOS device iMesssage log archives ###"
-
+    echo " ";
     # Start deleting logs and attachments for iOS iMessage logs
     for file in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/* ; do 
       if [[ -s "$file" ]] ; then
-      	echo " "; echo "     Removing iOS iMessage archive"; echo " ";
+        echo " "; echo "     Removing iOS iMessage archive"; echo " ";
         rm -r ~/Library/Containers/com.apple.iChat/Data/Library/Messages/*
       fi
       echo "     -- Deleting one found log file --"
@@ -97,32 +123,32 @@
        echo ""
     done
     # Delete iOS attachments process
-  	echo "###  Looking for attachments ###"
+    echo "###  Looking for attachments ###"
     for i in 1 2
       do
        echo ""
     done
 
-  	found_attach=''
-	for attach_file in ~/Library/Messages/Attachments/* ; do
-	    if [[ -s "$attach_file" ]] ; then
-	      found_attach=1
-	    fi
-	echo "     -- Deleting one found log file --"
+    found_attach=''
+  for attach_file in ~/Library/Messages/Attachments/* ; do
+      if [[ -s "$attach_file" ]] ; then
+        found_attach=1
+      fi
+  echo "     -- Deleting one found log file --"
         echo ""
-	done
+  done
 
-	if [[ "$found_attach" ]] ; then
-	 	echo " "; echo "     Removing all attachments"; echo " ";
-		echo "     "; rm -r ~/Library/Messages/Attachments/*
-	fi
-	echo ""
+  if [[ "$found_attach" ]] ; then
+    echo " "; echo "     Removing all attachments"; echo " ";
+    echo "     "; rm -r ~/Library/Messages/Attachments/*
+  fi
+  echo ""
 
     else
       echo "### ### ### ### ### ### You chose not to continue.. Ok, dude. ### ### ### ### ### ### "
     fi
     else
-  	echo ""
+    echo ""
     echo --- No iMessage logs exist on this computer!
     echo ""
   fi

@@ -27,6 +27,8 @@
 #  »»»  This is just a simple shell script to remove
 #       any iMessage logs that may be sitting around
 #       -Josh Pope
+#
+#  (see readme file to turn this into an executable file)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 (
     # state boolean var, triggers true if message logs are found in either iMessage log storage locations use in MacOS

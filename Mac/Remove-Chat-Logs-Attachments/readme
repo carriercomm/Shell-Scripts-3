@@ -7,19 +7,14 @@ Then open terminal, and type this in:
 # chmod +x $HOME/Desktop/remove_chat_logs
     please note: if for some strange reason you do not have the path variable $HOME defined, 
     just change the above line to read:
-    # chmod +x "/Users/YOURNAMEHERE/Desktop/remove_chat_logs"
+# chmod +x ~/Desktop/remove_chat_logs
     
-    
-If for some reason it does not turn into an executable file (it should).. Then run this command in terminal to execute the script:
 
-# open -b com.apple.terminal $HOME/Desktop/remove_chat_logs
-
-Otherwise, just double click the file.
+Now, just double click the file.
 
 
 
-
-This *should* create a shell executable file you can double click to run anytime. If not, use the command above.
+This will create a shell executable file you can double click to run anytime. If not, use the command above.
 I use the terminal command because its faster and easier for me.
 
 Note- no files will ever be deleted without you first giving the OK. 

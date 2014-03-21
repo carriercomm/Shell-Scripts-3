@@ -3,12 +3,12 @@ This script is stupid simple.. But makes it easy to delete chat logs on your (or
 To use, save the file to your DESKTOP as simply "remove_chat_logs" (no extension).
 
 Then open terminal, and type this in:
-
-# chmod +x $HOME/Desktop/remove_chat_logs
+'''
+ chmod +x $HOME/Desktop/remove_chat_logs
     please note: if for some strange reason you do not have the path variable $HOME defined, 
     just change the above line to read:
-# chmod +x ~/Desktop/remove_chat_logs
-    
+ chmod +x ~/Desktop/remove_chat_logs
+'''    
 
 Now, just double click the file.
 

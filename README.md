@@ -1,15 +1,15 @@
 This script is stupid simple.. But makes it easy to delete chat logs on your (or your employers) apple computer. I found this task tedious and repetitive and not as easy as it should be.
 
-To use, save the file to your DESKTOP as simply "remove_chat_logs" (no extension).
+To use, save the file to your DESKTOP as simply "remove_chat_logs.sh" (no extension).
 
 Then open terminal, and type this in:
 
-> chmod +x $HOME/Desktop/remove_chat_logs
+> chmod +x $HOME/Desktop/remove_chat_logs.sh
 
     please note: if for some strange reason you do not have the path variable $HOME defined, 
     just change the above line to read:
     
-> chmod +x ~/Desktop/remove_chat_logs
+> chmod +x ~/Desktop/remove_chat_logs.sh
     
 
 Now, just double click the file.

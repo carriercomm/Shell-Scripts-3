@@ -4,8 +4,8 @@ Save the file to your hard drive as simply "remove_chat_logs" (no extension). It
 
 
 
-Note- no files will ever be deleted without you first giving the OK. 
+> Note- no files will ever be deleted without you first giving the OK. 
 
-Keep the file on the desktop (or wherever you want to put it) and run it as often as you want.
+> Keep the file on the desktop (or wherever you want to put it) and run it as often as you want.
 
-Thanks and thanks.
+> Thanks and thanks.

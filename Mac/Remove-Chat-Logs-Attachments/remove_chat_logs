@@ -167,6 +167,7 @@
       echo "### ### ### ### ### ### Thank you!  - joshpopenyc@gmail.com ### ### ### ### ### ### "
       echo "### ### ### ### ### ### Your window is closing shortly  ### ### ### ### ### ### ### "
       sleep 2.5
+      disown
       KillAll Terminal
     
       exit
@@ -176,6 +177,7 @@
       echo "### ### ### ### ### ### You chose not to continue.. Ok, dude. ### ### ### ### ### ### "
       echo "### ### ### ### ### ###  Your window is closing shortly   ### ### ### ### ### ### ### "
       sleep 2.5
+      disown
       KillAll Terminal
       exit
     fi
@@ -185,7 +187,7 @@
     echo ""
     echo "### ### ### ### ### ### Your window is closing shortly  ### ### ### ### ### ### ### "
     sleep 2.5
-    KillAll Terminal
+    disown
     exit
   fi
 

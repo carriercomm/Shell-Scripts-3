@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #     ___          ___           ___           ___     
 #    /  /\        /  /\         /  /\         /__/\    
@@ -28,8 +27,6 @@
 #  »»»  This is just a simple shell script to remove
 #       any iMessage logs that may be sitting around
 #       -Josh Pope
-#
-#  (see readme file to turn this into an executable file)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 (
     # state boolean var, triggers true if message logs are found in either iMessage log storage locations use in MacOS
@@ -146,13 +143,50 @@
     echo "     "; rm -r ~/Library/Messages/Attachments/*
   fi
   echo ""
-
+  echo "#########################################################################";
+    read -p "### All logs and attachments have been removed. Are you done? 
+       (close terminal(y), or continue using it(n))? ###
+#########################################################################
+(type y or n): " RESP
+  # User chooses to close window
+    if [ "$RESP" = "y" ]; then
+    for i in 1 2 3 
+        do
+        echo "### ### ### ### ### ### ### ### ### ### ### ### ### ###"
+        sleep .3
+    done
+        echo "### ### ### Ending.. Preparing new Process  ### ### ###"
+    sleep 1.8
+    pwd=`pwd`
+    osascript -e "tell application \"Terminal\"" \
+        -e "tell application \"System Events\" to keystroke \"t\" using {command down}" \
+        -e "do script \"cd $pwd; clear\" in front window" \
+        -e "end tell"
+        > /dev/null
+  else
+      echo "### ### ### ### ### ### Thank you!  - joshpopenyc@gmail.com ### ### ### ### ### ### "
+      echo "### ### ### ### ### ### Your window is closing shortly  ### ### ### ### ### ### ### "
+      sleep 2.5
+      KillAll Terminal
+    
+      exit
+     # done
+    fi
     else
       echo "### ### ### ### ### ### You chose not to continue.. Ok, dude. ### ### ### ### ### ### "
+      echo "### ### ### ### ### ###  Your window is closing shortly   ### ### ### ### ### ### ### "
+      sleep 2.5
+      KillAll Terminal
+      exit
     fi
     else
     echo ""
     echo --- No iMessage logs exist on this computer!
     echo ""
+    echo "### ### ### ### ### ### Your window is closing shortly  ### ### ### ### ### ### ### "
+    sleep 2.5
+    KillAll Terminal
+    exit
   fi
+
 )

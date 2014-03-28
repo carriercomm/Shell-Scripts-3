@@ -1,36 +1,11 @@
-#!/bin/bash
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#     ___          ___           ___           ___     
-#    /  /\        /  /\         /  /\         /__/\    
-#   /  /:/       /  /::\       /  /:/_        \  \:\   
-#  /__/::\      /  /:/\:\     /  /:/ /\        \__\:\  
-#  \__\/\:\    /  /:/  \:\   /  /:/ /::\   ___ /  /::\ 
-#     \  \:\  /__/:/ \__\:\ /__/:/ /:/\:\ /__/\  /:/\:\
-#      \__\:\ \  \:\ /  /:/ \  \:\/:/~/:/ \  \:\/:/__\/
-#      /  /:/  \  \:\  /:/   \  \::/ /:/   \  \::/     
-#     /__/:/    \  \:\/:/     \__\/ /:/     \  \:\     
-#     \__\/      \  \::/        /__/:/       \  \:\    
-#                 \__\/         \__\/         \__\/    
-#       ___         ___           ___         ___     
-#      /  /\       /  /\         /  /\       /  /\    
-#     /  /::\     /  /::\       /  /::\     /  /:/_   
-#    /  /:/\:\   /  /:/\:\     /  /:/\:\   /  /:/ /\  
-#   /  /:/~/:/  /  /:/  \:\   /  /:/~/:/  /  /:/ /:/_ 
-#  /__/:/ /:/  /__/:/ \__\:\ /__/:/ /:/  /__/:/ /:/ /\
-#  \  \:\/:/   \  \:\ /  /:/ \  \:\/:/   \  \:\/:/ /:/
-#   \  \::/     \  \:\  /:/   \  \::/     \  \::/ /:/ 
-#    \  \:\      \  \:\/:/     \  \:\      \  \:\/:/  
-#     \  \:\      \  \::/       \  \:\      \  \::/   
-#      \__\/       \__\/         \__\/       \__\/   
-# 
-#
 #  »»»  This is just a simple shell script to remove
 #       any iMessage logs that may be sitting around
 #       -Josh Pope
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 (
 
-
+#!/bin/bash
 
     OLD_IFS="$IFS"
     IFS=
@@ -40,7 +15,6 @@
     NAME[3]="  /__/::\      /  /:/\:\     /  /:/ /\        \__\:\  "
     NAME[4]="  \__\/\:\    /  /:/  \:\   /  /:/ /::\   ___ /  /::\  "
     NAME[5]="     \  \:\  /__/:/ \__\:\ /__/:/ /:/\:\ /__/\  /:/\:\ "
-
     NAME[6]="      \__\:\ \  \:\ /  /:/ \  \:\/:/~/:/ \  \:\/:/__\/ "
     NAME[7]="      /  /:/  \  \:\  /:/   \  \::/ /:/   \  \::/     "
     NAME[8]="     /__/:/    \  \:\/:/     \__\/ /:/     \  \:\     "
@@ -52,7 +26,6 @@
     NAME[14]="    /  /:/\:\   /  /:/\:\     /  /:/\:\   /  /:/ /\  "
     NAME[15]="   /  /:/~/:/  /  /:/  \:\   /  /:/~/:/  /  /:/ /:/_ "
     NAME[16]="  /__/:/ /:/  /__/:/ \__\:\ /__/:/ /:/  /__/:/ /:/ /\ "
-
     NAME[17]="  \  \:\/:/   \  \:\ /  /:/ \  \:\/:/   \  \:\/:/ /:/"
     NAME[18]="   \  \::/     \  \:\  /:/   \  \::/     \  \::/ /:/ "
     NAME[19]="    \  \:\      \  \:\/:/     \  \:\      \  \:\/:/  "
@@ -72,6 +45,7 @@
     # state boolean var, triggers true if message logs are found in either iMessage log storage locations use in MacOS
     found_logs=''
     echo -e "\033[31m -------  Searching for all iMessage logs and attachments   --------"
+
     # check the user library messages folder, which will contain all iMessage logs from MacOS 
     for file in ~/Library/Messages/* ; do
     if [[ -s "$file" ]] ; then
@@ -96,7 +70,7 @@
   done
     echo -e "\033[31m Found iMessage Logs!"
   
-  # User respponse- if logs are found, this message displays an option to delete them or to stop application now before anything is removed
+    # User response- if logs are found, this message displays an option to delete them or to stop application now before anything is removed
     echo -e "\033[33m "
     echo -e '\033[33m#############################################################################'
     read -p "### Are you sure want to delete iMessage logs, and any attachments (y/n)? ###
@@ -150,7 +124,6 @@
         rm -r ~/Library/Containers/com.apple.iChat/Data/Library/Messages/*
       fi
       echo -e "\033[31m -- Deleting one found log file --"
-     # echo "     -- Deleting one found log file --"
       echo ""
     done
     echo -e "\033[32m    Searching for any leftover log files that may be present"
@@ -161,7 +134,6 @@
     done
     # Delete iOS attachments process
     echo -e "\033[32m    Looking for attachments"
-    #echo "###  Looking for attachments ###"
     for i in 1 2
       do
        echo ""
@@ -173,7 +145,6 @@
         found_attach=1
       fi
          echo -e "\033[31m -- Deleting one found log file --"
-  #echo "     -- Deleting one found log file --"
         echo -e "\033[0m "
   done
 
@@ -204,7 +175,6 @@
     NAME[3]="  /__/::\      /  /:/\:\     /  /:/ /\        \__\:\  "
     NAME[4]="  \__\/\:\    /  /:/  \:\   /  /:/ /::\   ___ /  /::\  "
     NAME[5]="     \  \:\  /__/:/ \__\:\ /__/:/ /:/\:\ /__/\  /:/\:\ "
-
     NAME[6]="      \__\:\ \  \:\ /  /:/ \  \:\/:/~/:/ \  \:\/:/__\/ "
     NAME[7]="      /  /:/  \  \:\  /:/   \  \::/ /:/   \  \::/     "
     NAME[8]="     /__/:/    \  \:\/:/     \__\/ /:/     \  \:\     "
@@ -216,7 +186,6 @@
     NAME[14]="    /  /:/\:\   /  /:/\:\     /  /:/\:\   /  /:/ /\  "
     NAME[15]="   /  /:/~/:/  /  /:/  \:\   /  /:/~/:/  /  /:/ /:/_ "
     NAME[16]="  /__/:/ /:/  /__/:/ \__\:\ /__/:/ /:/  /__/:/ /:/ /\ "
-
     NAME[17]="  \  \:\/:/   \  \:\ /  /:/ \  \:\/:/   \  \:\/:/ /:/"
     NAME[18]="   \  \::/     \  \:\  /:/   \  \::/     \  \::/ /:/ "
     NAME[19]="    \  \:\      \  \:\/:/     \  \:\      \  \:\/:/  "
@@ -236,8 +205,9 @@
         -e "end tell"
         > /dev/null
   else
-      echo "### ### ### ### ### ### Thank you!  - joshpopenyc@gmail.com ### ### ### ### ### ### "
-      echo "### ### ### ### ### ###  Your window is closing shortly ### ### ### ### ### ### ### "
+      echo "### ### ### ### ###  Thank you!  - joshpopenyc@gmail.com ### ### ### ### ###"
+      echo "### ### ### ### ## Your window is closing shortly ## ### ### ### ### ### ###"
+      echo "### ### ### ### ## You chose not to continue.. Ok, dude. ## ### ### ### ### "
       sleep 2.5
       disown
       KillAll Terminal
@@ -246,8 +216,8 @@
      # done
     fi
     else    
-      echo "### ### ### ### ### ### You chose not to continue.. Ok, dude. ### ### ### ### ### ### "
-      echo "### ### ### ### ### ###   Your window is closing shortly  ### ### ### ### ### ### ### "
+      echo "### ### ### ### ## You chose not to continue.. Ok, dude. ## ### ### ### ### "
+      echo "### ### ### ### ### # Your window is closing shortly  # ### ### ### ### ### "
       sleep 2.5
       disown
       KillAll Terminal

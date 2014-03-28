@@ -144,10 +144,10 @@
     echo "     "; sudo rm -r ~/Library/Messages/Attachments/*
   fi
    echo -e "\033[33m "
-   echo -e "\033[33m#########################################################################"
+   echo -e "\033[33m##########################################################################"
     read -p "####### All logs and attachments have been removed. Are you done? #######
-             (Close this app, continue using terminal(y), or close app and terminal(n))?
-#########################################################################
+(Close this app, continue using terminal(y), or close app and terminal(n))?
+##########################################################################
 (type y or n): " RESP
   # User chooses to close window
     echo " "

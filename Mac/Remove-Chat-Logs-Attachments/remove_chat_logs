@@ -57,6 +57,10 @@
     NAME[18]="   \  \::/     \  \:\  /:/   \  \::/     \  \::/ /:/ "
     NAME[19]="    \  \:\      \  \:\/:/     \  \:\      \  \:\/:/  "
     NAME[20]="     \__\/       \__\/         \__\/       \__\/   "
+    NAME[21]="           "
+    NAME[22]="   iMessage log eliminator for OSX. Target and  "
+    NAME[23]="     removes all iOS and MacOs iMessage logs."
+    NAME[24]="     v.55 Josh Pope joshpopenyc@gmail.com"
     for i in "${NAME[@]}"
     do
        :

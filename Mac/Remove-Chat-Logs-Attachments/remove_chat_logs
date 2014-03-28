@@ -51,20 +51,20 @@
     if [[ "$found_logs" ]]  ; then
     for i in 1 2 3
       do
-          echo ---
+          echo -e "\033[31m ---"
       sleep .2  
   done
-
-    echo "     Found iMessage Logs!"
+    echo -e "\033[31m Found iMessage Logs!"
+   # echo "     Found iMessage Logs!"
     for i in 1 2 3
       do
-      echo ---
+        echo -e "\033[31m ---"
       sleep .1
   done
 
   # User respponse- if logs are found, this message displays an option to delete them or to stop application now before anything is removed
-  echo "";
-  echo "#############################################################################";
+    echo -e "\033[33m "
+    echo -e '\033[33m#############################################################################'
     read -p "### Are you sure want to delete iMessage logs, and any attachments (y/n)? ###
 #############################################################################
 (type y or n): " RESP
@@ -75,22 +75,24 @@
     done
 
     # Deleting iMessage chat logs
-    echo "###  Finding chat logs and deleting them ###"
+    echo -e "\033[32m    Finding chat logs and deleting them"
+    echo ""
     for file in ~/Library/Messages/chat.* ; do
       if [[ -s "$file" ]] ; then
         rm -r ~/Library/Messages/chat.*
       fi
-    echo "     -- Deleting one found log file --"
+    echo -e "\033[31m -- Deleting one found log file --"
+   # echo "     -- Deleting one found log file --"
     echo ""
     done
 
     # make double sure there is no possibility that any files exist in the log file location.. delete everything in it. (this causes no harm)
-    echo " "; echo "     Removing all log files that may have been missed"; echo " ";
+    echo -e "\033[32m    Removing all log files that may have been missed"; echo " ";
     for file in ~/Library/Messages/* ; do
       if [[ -s "$file" ]] ; then
         rm -r ~/Library/Messages/*
       fi
-    echo "     -- Deleting one found log file --"
+    echo -e "\033[31m -- Deleting one found log file --"
     echo ""
     done
   
@@ -99,12 +101,13 @@
       if [[ -s "$file" ]] ; then
         rm -r ~/Library/Messages/*.*
       fi
-    echo "     -- Deleting one found log file --"
+    echo -e "\033[31m -- Deleting one found log file --"
     echo ""
     done
 
     # Let the user know we're now searching for iOS logs
-    echo "###  Searching for iOS device iMesssage log archives ###"
+    echo -e "\033[32m    Searching for iOS device iMesssage log archives "
+    #echo "###  Searching for iOS device iMesssage log archives ###"
     echo " ";
     # Start deleting logs and attachments for iOS iMessage logs
     for file in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/* ; do 
@@ -112,18 +115,20 @@
         echo " "; echo "     Removing iOS iMessage archive"; echo " ";
         rm -r ~/Library/Containers/com.apple.iChat/Data/Library/Messages/*
       fi
-      echo "     -- Deleting one found log file --"
+      echo -e "\033[31m -- Deleting one found log file --"
+     # echo "     -- Deleting one found log file --"
       echo ""
     done
-
-    echo "###  Searching for any leftover log files that may be present ###"
+    echo -e "\033[32m    Searching for any leftover log files that may be present"
+    #echo "###  Searching for any leftover log files that may be present ###"
     # recurse through attachments, if they exist, and delete them
     for i in 1
       do
        echo ""
     done
     # Delete iOS attachments process
-    echo "###  Looking for attachments ###"
+    echo -e "\033[32m    Looking for attachments"
+    #echo "###  Looking for attachments ###"
     for i in 1 2
       do
        echo ""
@@ -134,28 +139,30 @@
       if [[ -s "$attach_file" ]] ; then
         found_attach=1
       fi
-  echo "     -- Deleting one found log file --"
-        echo ""
+         echo -e "\033[31m -- Deleting one found log file --"
+  #echo "     -- Deleting one found log file --"
+        echo -e "\033[0m "
   done
 
   if [[ "$found_attach" ]] ; then
     echo " "; echo "     Removing all attachments"; echo " ";
     echo "     "; rm -r ~/Library/Messages/Attachments/*
   fi
-  echo ""
-  echo "#########################################################################";
-    read -p "### All logs and attachments have been removed. Are you done? 
-       (close terminal(y), or continue using it(n))? ###
+   echo -e "\033[33m "
+   echo -e "\033[33m#########################################################################";
+    read -p "####### All logs and attachments have been removed. Are you done? #######
+             (close terminal(), or continue using it(y))?
 #########################################################################
 (type y or n): " RESP
   # User chooses to close window
+    echo " "
     if [ "$RESP" = "y" ]; then
     for i in 1 2 3 
         do
-        echo "### ### ### ### ### ### ### ### ### ### ### ### ### ###"
+        echo "### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###"
         sleep .3
-    done
-        echo "### ### ### Ending.. Preparing new Process  ### ### ###"
+    done      
+        echo "### ### ### ### ### ###   Preparing new Processes  ### ### ### ### ###"
     sleep 1.8
     pwd=`pwd`
     osascript -e "tell application \"Terminal\"" \
@@ -165,7 +172,7 @@
         > /dev/null
   else
       echo "### ### ### ### ### ### Thank you!  - joshpopenyc@gmail.com ### ### ### ### ### ### "
-      echo "### ### ### ### ### ### Your window is closing shortly  ### ### ### ### ### ### ### "
+      echo "### ### ### ### ### ###  Your window is closing shortly ### ### ### ### ### ### ### "
       sleep 2.5
       disown
       KillAll Terminal
@@ -173,9 +180,9 @@
       exit
      # done
     fi
-    else
+    else    
       echo "### ### ### ### ### ### You chose not to continue.. Ok, dude. ### ### ### ### ### ### "
-      echo "### ### ### ### ### ###  Your window is closing shortly   ### ### ### ### ### ### ### "
+      echo "### ### ### ### ### ###   Your window is closing shortly  ### ### ### ### ### ### ### "
       sleep 2.5
       disown
       KillAll Terminal

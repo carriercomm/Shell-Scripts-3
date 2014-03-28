@@ -88,7 +88,7 @@
     for file in ~/Library/Messages/chat.* ; do
       echo ""
       if [[ -s "$file" ]] ; then
-        rm -r ~/Library/Messages/chat.*
+        sudo rm -r ~/Library/Messages/chat.*
       fi
     echo -e "\033[31m -- Deleting one found log file --"
     echo ""
@@ -99,16 +99,7 @@
     for file in ~/Library/Messages/* ; do
       echo " ";
       if [[ -s "$file" ]] ; then
-        rm -r ~/Library/Messages/*
-      fi
-    echo -e "\033[31m -- Deleting one found log file --"
-    echo ""
-    done
-  
-    # for the paranoid- one last all encompassing sweep to assure EVERYTHING is deleted.. yes, this is non-recoverable. don't delete if you want to recover these logs.
-    for file in ~/Library/Messages/*.* ; do
-      if [[ -s "$file" ]] ; then
-        rm -r ~/Library/Messages/*.*
+        sudo rm -r ~/Library/Messages/*
       fi
     echo -e "\033[31m -- Deleting one found log file --"
     echo ""
@@ -121,7 +112,7 @@
     for file in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/* ; do 
       if [[ -s "$file" ]] ; then
         echo "    Removing iOS iMessage archive"; echo " ";
-        rm -r ~/Library/Containers/com.apple.iChat/Data/Library/Messages/*
+        sudo rm -r ~/Library/Containers/com.apple.iChat/Data/Library/Messages/*
       fi
       echo -e "\033[31m -- Deleting one found log file --"
       echo ""
@@ -150,12 +141,12 @@
 
   if [[ "$found_attach" ]] ; then
     echo " "; echo "     Removing all attachments"; echo " ";
-    echo "     "; rm -r ~/Library/Messages/Attachments/*
+    echo "     "; sudo rm -r ~/Library/Messages/Attachments/*
   fi
    echo -e "\033[33m "
-   echo -e "\033[33m#########################################################################";
+   echo -e "\033[33m#########################################################################"
     read -p "####### All logs and attachments have been removed. Are you done? #######
-             (close terminal(), or continue using it(y))?
+             (Close this app, continue using terminal(y), or close app and terminal(n))?
 #########################################################################
 (type y or n): " RESP
   # User chooses to close window

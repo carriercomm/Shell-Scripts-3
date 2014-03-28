@@ -60,14 +60,14 @@
     for i in "${NAME[@]}"
     do
        :
-       echo $i
+       echo "         "$i
        sleep .02 
     done
     IFS="$OLD_IFS"
     echo ""
     # state boolean var, triggers true if message logs are found in either iMessage log storage locations use in MacOS
     found_logs=''
-    echo -e "\033[31m Searching for all iMessage logs and attachments..."
+    echo -e "\033[31m -------  Searching for all iMessage logs and attachments   --------"
     # check the user library messages folder, which will contain all iMessage logs from MacOS 
     for file in ~/Library/Messages/* ; do
     if [[ -s "$file" ]] ; then
@@ -191,6 +191,7 @@
         echo "### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###"
         sleep .3
     done   
+        echo "### ### ### ### ### ###   Preparing new Processes  ### ### ### ### ###"
     OLD_IFS="$IFS"
     IFS=
     NAME[0]="     ___          ___           ___           ___    "
@@ -219,11 +220,10 @@
     for i in "${NAME[@]}"
     do
        :
-       echo $i
-       sleep .01
+       echo "         "$i
+       sleep .02 
     done
-    IFS="$OLD_IFS" 
-        echo "### ### ### ### ### ###   Preparing new Processes  ### ### ### ### ###"
+    IFS="$OLD_IFS"
     sleep 2.8
     pwd=`pwd`
     osascript -e "tell application \"Terminal\"" \
@@ -251,11 +251,11 @@
     fi
     else
     echo ""
-    echo ------------  No iMessage logs exist on this computer   -------------
+    echo ------------  No iMessage logs exist on this computer   --------------
     echo ""
     echo "### ### ### ### Your window is closing shortly  ### ### ### ### ### "
     sleep 2.5
-    disown
+    KillAll Terminal
     exit
   fi
 

@@ -5,42 +5,53 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 (
 
-#!/bin/bash
+#!/bin/sh
 
     OLD_IFS="$IFS"
     IFS=
-    NAME[0]="     ___          ___           ___           ___    "
-    NAME[1]="    /  /\        /  /\         /  /\         /__/\    "
-    NAME[2]="   /  /:/       /  /::\       /  /:/_        \  \:\   "
-    NAME[3]="  /__/::\      /  /:/\:\     /  /:/ /\        \__\:\  "
-    NAME[4]="  \__\/\:\    /  /:/  \:\   /  /:/ /::\   ___ /  /::\  "
-    NAME[5]="     \  \:\  /__/:/ \__\:\ /__/:/ /:/\:\ /__/\  /:/\:\ "
-    NAME[6]="      \__\:\ \  \:\ /  /:/ \  \:\/:/~/:/ \  \:\/:/__\/ "
-    NAME[7]="      /  /:/  \  \:\  /:/   \  \::/ /:/   \  \::/     "
-    NAME[8]="     /__/:/    \  \:\/:/     \__\/ /:/     \  \:\     "
-    NAME[9]="     \__\/      \  \::/        /__/:/       \  \:\    "
-    NAME[10]="                 \__\/         \__\/         \__\/    "
-    NAME[11]="       ___         ___           ___         ___     "
-    NAME[12]="      /  /\       /  /\         /  /\       /  /\    "
-    NAME[13]="     /  /::\     /  /::\       /  /::\     /  /:/_   "
-    NAME[14]="    /  /:/\:\   /  /:/\:\     /  /:/\:\   /  /:/ /\  "
-    NAME[15]="   /  /:/~/:/  /  /:/  \:\   /  /:/~/:/  /  /:/ /:/_ "
-    NAME[16]="  /__/:/ /:/  /__/:/ \__\:\ /__/:/ /:/  /__/:/ /:/ /\ "
-    NAME[17]="  \  \:\/:/   \  \:\ /  /:/ \  \:\/:/   \  \:\/:/ /:/"
-    NAME[18]="   \  \::/     \  \:\  /:/   \  \::/     \  \::/ /:/ "
-    NAME[19]="    \  \:\      \  \:\/:/     \  \:\      \  \:\/:/  "
-    NAME[20]="     \__\/       \__\/         \__\/       \__\/   "
-    NAME[21]="           "
-    NAME[22]="   iMessage log eliminator for OSX. Target and  "
-    NAME[23]="     removes all iOS and MacOs iMessage logs."
-    NAME[24]="     v.55 Josh Pope joshpopenyc@gmail.com"
+    NAME[0]="      ___    a shell script by   ___           ___    "
+    NAME[1]="     /  /\        /  /\         /  /\         /__/\    "
+    NAME[2]="    /  /:/       /  /::\       /  /:/_        \  \:\   "
+    NAME[3]="   /__/::\      /  /:/\:\     /  /:/ /\        \__\:\  "
+    NAME[4]="   \__\/\:\    /  /:/  \:\   /  /:/ /::\   ___ /  /::\  "
+    NAME[5]="      \  \:\  /__/:/ \__\:\ /__/:/ /:/\:\ /__/\  /:/\:\ "
+    NAME[6]="       \__\:\ \  \:\ /  /:/ \  \:\/:/~/:/ \  \:\/:/__\/ "
+    NAME[7]="       /  /:/  \  \:\  /:/   \  \::/ /:/   \  \::/     "
+    NAME[8]="      /__/:/    \  \:\/:/     \__\/ /:/     \  \:\     "
+    NAME[9]="      \__\/      \  \::/        /__/:/       \  \:\    "
+    NAME[10]="                  \__\/         \__\/         \__\/    "
+    NAME[11]="        ___         ___           ___         ___     "
+    NAME[12]="       /  /\       /  /\         /  /\       /  /\    "
+    NAME[13]="      /  /::\     /  /::\       /  /::\     /  /:/_   "
+    NAME[14]="     /  /:/\:\   /  /:/\:\     /  /:/\:\   /  /:/ /\  "
+    NAME[15]="    /  /:/~/:/  /  /:/  \:\   /  /:/~/:/  /  /:/ /:/_ "
+    NAME[16]="   /__/:/ /:/  /__/:/ \__\:\ /__/:/ /:/  /__/:/ /:/ /\ "
+    NAME[17]="   \  \:\/:/   \  \:\ /  /:/ \  \:\/:/   \  \:\/:/ /:/"
+    NAME[18]="    \  \::/     \  \:\  /:/   \  \::/     \  \::/ /:/ "
+    NAME[19]="     \  \:\      \  \:\/:/     \  \:\      \  \:\/:/  "
+    NAME[20]="      \__\/       \__\/         \__\/       \__\/   "
+    NAME[21]="           
+                               ~~~~~~~~~~~~~~"
+      NAME[22]="    ____ ____ ____ ____ ____ _________ ____ ____ ____ "
+      NAME[23]="   ||e |||r |||a |||s |||e |||       |||i |||O |||S ||"
+      NAME[24]="   ||__|||__|||__|||__|||__|||_______|||__|||__|||__||"
+      NAME[25]="   |/__\|/__\|/__\|/__\|/__\|/_______\|/__\|/__\|/__\|"
+      NAME[26]="    ____ ____ ____ ____ _________ ____ ____ ____ ____ "
+      NAME[27]="   ||c |||h |||a |||t |||       |||l |||o |||g |||s ||"
+      NAME[28]="   ||__|||__|||__|||__|||_______|||__|||__|||__|||__||"
+      NAME[29]="   |/__\|/__\|/__\|/__\|/_______\|/__\|/__\|/__\|/__\|"
+NAME[30]=" "
+NAME[31]=" "
+    NAME[32]="        iMessage log eliminator for OSX. Target and  "
+    NAME[33]="          removes all iOS and MacOs iMessage logs."
+    NAME[34]="            v1 Josh Pope joshpopenyc@gmail.com"
     for i in "${NAME[@]}"
     do
        :
-       echo "         "$i
+       echo "     "$i
        sleep .02 
     done
-    IFS="$OLD_IFS"
+    
     echo ""
     # state boolean var, triggers true if message logs are found in either iMessage log storage locations use in MacOS
     found_logs=''
@@ -63,12 +74,14 @@
     # Done searching iOS iMessage log folder
     # if logs were found, print user feedback to let them know and choose to delete them or not
     if [[ "$found_logs" ]]  ; then
-    for i in 1 2 3
-      do
-          echo -e "\033[31m -"
-      sleep .2  
-  done
-    echo -e "\033[31m Found iMessage Logs!"
+    echo -e "\n\n"
+    echo -ne '\033[31m#####                                                                   (33%)\r'
+        sleep 1
+        echo -ne '\033[31m### ### ### ### ### ### ### ### ### ### ###                             (66%)\r'
+        sleep 1
+        echo -ne '\033[31m### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### (100%)\r\n'
+        echo -ne '\n'
+    echo -e "\033[31m                        Found iMessage Logs!"
   
     # User response- if logs are found, this message displays an option to delete them or to stop application now before anything is removed
     echo -e "\033[33m "
@@ -84,11 +97,17 @@
 
     # Deleting iMessage chat logs
     echo -e "\033[32m    Finding chat logs and deleting them"
-
+    echo -ne '\033[31m#####                                                                   (33%)\r'
+        sleep 1
+        echo -ne '\033[31m### ### ### ### ### ### ### ### ### ### ###                             (66%)\r'
+        sleep 1
+        echo -ne '\033[31m### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### (100%)\r\n'
+        echo -ne '\n'
     for file in ~/Library/Messages/chat.* ; do
       echo ""
       if [[ -s "$file" ]] ; then
-        sudo rm -r ~/Library/Messages/chat.*
+        chmod -R 777 ~/Library/Messages/chat.*
+        rm -r ~/Library/Messages/chat.*
       fi
     echo -e "\033[31m -- Deleting one found log file --"
     echo ""
@@ -99,7 +118,8 @@
     for file in ~/Library/Messages/* ; do
       echo " ";
       if [[ -s "$file" ]] ; then
-        sudo rm -r ~/Library/Messages/*
+        chmod -R 777 ~/Library/Messages/*
+        rm -r ~/Library/Messages/*
       fi
     echo -e "\033[31m -- Deleting one found log file --"
     echo ""
@@ -109,26 +129,21 @@
     echo -e "\033[32m    Searching for iOS device iMesssage log archives "
     echo " ";
     # Start deleting logs and attachments for iOS iMessage logs
+
     for file in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/* ; do 
       if [[ -s "$file" ]] ; then
         echo "    Removing iOS iMessage archive"; echo " ";
-        sudo rm -r ~/Library/Containers/com.apple.iChat/Data/Library/Messages/*
+        chmod -R 777 ~/Library/Containers/com.apple.iChat/Data/Library/Messages/*
+        rm -r ~/Library/Containers/com.apple.iChat/Data/Library/Messages/*
       fi
       echo -e "\033[31m -- Deleting one found log file --"
       echo ""
     done
-    echo -e "\033[32m    Searching for any leftover log files that may be present"
+    echo -e "\033[32m    Searching for any leftover log files that may be present\n"
     # recurse through attachments, if they exist, and delete them
-    for i in 1
-      do
-       echo ""
-    done
+   
     # Delete iOS attachments process
-    echo -e "\033[32m    Looking for attachments"
-    for i in 1 2
-      do
-       echo ""
-    done
+    echo -e "\033[32m    Looking for attachments\n"
 
     found_attach=''
   for attach_file in ~/Library/Messages/Attachments/* ; do
@@ -140,8 +155,8 @@
   done
 
   if [[ "$found_attach" ]] ; then
-    echo " "; echo "     Removing all attachments"; echo " ";
-    echo "     "; sudo rm -r ~/Library/Messages/Attachments/*
+    echo -e "\n     Removing all attachments\n\n";
+    rm -r ~/Library/Messages/Attachments/*
   fi
    echo -e "\033[33m "
    echo -e "\033[33m##########################################################################"
@@ -150,56 +165,59 @@
 ##########################################################################
 (type y or n): " RESP
   # User chooses to close window
-    echo " "
+    echo -e "\n"
     if [ "$RESP" = "y" ]; then
-    for i in 1 2 3 
-        do
-        echo "### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###"
-        sleep .3
-    done   
-        echo "### ### ### ### ### ###   Preparing new Processes  ### ### ### ### ###"
-    OLD_IFS="$IFS"
-    IFS=
-    NAME[0]="     ___          ___           ___           ___    "
-    NAME[1]="    /  /\        /  /\         /  /\         /__/\    "
-    NAME[2]="   /  /:/       /  /::\       /  /:/_        \  \:\   "
-    NAME[3]="  /__/::\      /  /:/\:\     /  /:/ /\        \__\:\  "
-    NAME[4]="  \__\/\:\    /  /:/  \:\   /  /:/ /::\   ___ /  /::\  "
-    NAME[5]="     \  \:\  /__/:/ \__\:\ /__/:/ /:/\:\ /__/\  /:/\:\ "
-    NAME[6]="      \__\:\ \  \:\ /  /:/ \  \:\/:/~/:/ \  \:\/:/__\/ "
-    NAME[7]="      /  /:/  \  \:\  /:/   \  \::/ /:/   \  \::/     "
-    NAME[8]="     /__/:/    \  \:\/:/     \__\/ /:/     \  \:\     "
-    NAME[9]="     \__\/      \  \::/        /__/:/       \  \:\    "
-    NAME[10]="                 \__\/         \__\/         \__\/    "
-    NAME[11]="       ___         ___           ___         ___     "
-    NAME[12]="      /  /\       /  /\         /  /\       /  /\    "
-    NAME[13]="     /  /::\     /  /::\       /  /::\     /  /:/_   "
-    NAME[14]="    /  /:/\:\   /  /:/\:\     /  /:/\:\   /  /:/ /\  "
-    NAME[15]="   /  /:/~/:/  /  /:/  \:\   /  /:/~/:/  /  /:/ /:/_ "
-    NAME[16]="  /__/:/ /:/  /__/:/ \__\:\ /__/:/ /:/  /__/:/ /:/ /\ "
-    NAME[17]="  \  \:\/:/   \  \:\ /  /:/ \  \:\/:/   \  \:\/:/ /:/"
-    NAME[18]="   \  \::/     \  \:\  /:/   \  \::/     \  \::/ /:/ "
-    NAME[19]="    \  \:\      \  \:\/:/     \  \:\      \  \:\/:/  "
-    NAME[20]="     \__\/       \__\/         \__\/       \__\/   "
-    for i in "${NAME[@]}"
-    do
-       :
-       echo "         "$i
-       sleep .02 
-    done
-    IFS="$OLD_IFS"
-    sleep 2.8
-    pwd=`pwd`
-    osascript -e "tell application \"Terminal\"" \
-        -e "tell application \"System Events\" to keystroke \"t\" using {command down}" \
-        -e "do script \"cd $pwd; clear\" in front window" \
-        -e "end tell"
-        > /dev/null
+        echo -ne '\033[31m#####                                                                   (33%)\r'
+        sleep 1
+        echo -ne '\033[31m### ### ### ### ### ### ### ### ### ### ###                             (66%)\r'
+        sleep 1
+        echo -ne '\033[31m### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### (100%)\r\n'
+        echo -ne '\n'
+        echo -e "\033[33m### ### ##  All files deleted $(date +"%m-%d-%Y at %r")  ## ### ### ###\n"
+        
+        for i in 1 2 
+          do
+          echo "### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###"
+          sleep .1
+        done  
+        echo -e "\n### ### ### ### #   Preparing to Close Process    # ### ### ### ### ###"
+        IFS='%'
+        for (( i = 22 ; i < ${#NAME[@]} ; i++ )) do
+             echo "     "${NAME[$i]}
+             sleep .02 
+        done
+   
+      sleep 3
+      pwd=`pwd`
+      osascript -e "tell application \"Terminal\"" \
+          -e "tell application \"System Events\" to keystroke \"t\" using {command down}" \
+          -e "do script \"cd $pwd; clear\" in front window" \
+          -e "end tell"
+          > /dev/null
   else
       echo "### ### ### ### ###  Thank you!  - joshpopenyc@gmail.com ### ### ### ### ###"
-      echo "### ### ### ### ## Your window is closing shortly ## ### ### ### ### ### ###"
-      echo "### ### ### ### ## You chose not to continue.. Ok, dude. ## ### ### ### ### "
-      sleep 2.5
+      echo "### ### ### ### ### ###  Give us one second here...  ### ### ### ### ### ###"
+      for i in 1 2 3 4
+          do
+          echo -e "\033[31m -"
+          sleep .65
+        done 
+      IFS='%'
+    for (( i = 22 ; i < ${#NAME[@]} ; i++ )) do
+    
+         echo "     "${NAME[$i]}
+         sleep .02 
+      done
+      
+      sleep .3
+      for i in 1 2 3 
+        do
+        echo "### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###"
+        sleep .1
+      done  
+      echo "### ### ### ### ###   Your window is closing shortly   ### ### ### ### ###"
+      echo -e "### ### ### ### #  You chose not to continue. Aborting. ## ### ### ###\n\n"
+      sleep 3.2
       disown
       KillAll Terminal
     
@@ -207,8 +225,23 @@
      # done
     fi
     else    
-      echo "### ### ### ### ## You chose not to continue.. Ok, dude. ## ### ### ### ### "
-      echo "### ### ### ### ### # Your window is closing shortly  # ### ### ### ### ### "
+      echo "### ### ### ### ###  Thank you!  - joshpopenyc@gmail.com ### ### ### ### ###"
+      var q = 22
+      IFS='%'
+    for (( i = 22 ; i < ${#NAME[@]} ; i++ )) do
+         echo "     "${NAME[$i]}
+         sleep .02 
+      done
+      
+      sleep .3
+      for i in 1 2 3 
+        do
+        echo "### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###"
+        sleep .15
+      done  
+      echo "### ### ### ### ### # You chose not to continue.. Ok. # ### ### ### ### ### "
+      echo -e "### ### ### ### ###   Your window is closing shortly    ### ### ### ### ###\n"
+      
       sleep 2.5
       disown
       KillAll Terminal
@@ -216,9 +249,23 @@
     fi
     else
     echo ""
-    echo ------------  No iMessage logs exist on this computer   --------------
-    echo ""
-    echo "### ### ### ### Your window is closing shortly  ### ### ### ### ### "
+    echo "### ### ### ###  Thank you!  - joshpopenyc@gmail.com  ### ### ### ###"
+    sleep .3
+    for i in 1 2 3 
+        do
+        echo "### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###"
+        sleep .15
+    done  
+    echo -e "\n\n-----------  No iMessage logs exist on this computer   --------------"
+    sleep .6
+    echo -e "\n### ### ### ###  Your window is closing shortly   ### ### ### ### ###"
+    IFS='%'
+    for (( i = 22 ; i < ${#NAME[@]} ; i++ )) do
+
+         echo "     "${NAME[$i]}
+         sleep .02 
+      done
+      
     sleep 2.5
     KillAll Terminal
     exit

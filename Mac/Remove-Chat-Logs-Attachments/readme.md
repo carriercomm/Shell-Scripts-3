@@ -9,3 +9,5 @@ Save the file to your hard drive as simply "remove_chat_logs" (no extension). It
 > Keep the file on the desktop (or wherever you want to put it) and run it as often as you want.
 
 > Thanks and thanks.
+
+[Official Landing Page](joshpopenyc.github.io/Shell-Scripts/)

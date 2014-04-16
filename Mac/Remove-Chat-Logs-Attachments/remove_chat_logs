@@ -66,7 +66,7 @@ NAME[31]=" "
     # Done searching primary iMessage log folder
 
     # check the iOS messages archive folder, which will contain all iMessage logs from iOS saved in MacOS format
-    for file2 in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/* ; do
+    for file2 in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/Archives/* ; do
     if [[ -s "$file2" ]] ; then
        found_logs=1
     fi

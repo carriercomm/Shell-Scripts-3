@@ -1,3 +1,4 @@
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #  »»»  This is just a simple shell script to remove
 #       any iMessage logs that may be sitting around
@@ -66,7 +67,7 @@ NAME[31]=" "
     # Done searching primary iMessage log folder
 
     # check the iOS messages archive folder, which will contain all iMessage logs from iOS saved in MacOS format
-    for file2 in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/Archives/* ; do
+    for file2 in ~/Library/Containers/com.apple.iChat/Data/Library/Messages/Archive/* ; do
     if [[ -s "$file2" ]] ; then
        found_logs=1
     fi

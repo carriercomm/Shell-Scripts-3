@@ -12,4 +12,4 @@ Save the file to your hard drive as simply "remove_chat_logs" (no extension). It
 
 > Thanks and thanks.
 
-[Official Landing Page](http://joshpopenyc.github.io/Shell-Scripts/)
+  

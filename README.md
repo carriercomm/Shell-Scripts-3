@@ -1,7 +1,6 @@
 Command line & Shell Scripts I use often
 
+These are command line (shell) script files that automate common tasks on my apple computer..
 
-1. [Remove iMessage Logs](http://github.com/joshpopenyc/Shell-Scripts/tree/master/Mac/Remove-Chat-Logs-Attachments)
-2. [Use GZip to Compress JS and CSS files] (https://github.com/joshpopenyc/Shell-Scripts/blob/master/gzip-compression-tools/iterate%20compress%20css.sh)
+I keep these in a folder in my dock and use them often.. Especially the CloneRepo, EditPath, and EditHosts command files.. And just because it is often necessary after editing $PATH, etc, I also have a KillFinder command..
 
-Direct Download Link: <a href="https://github.com/joshpopenyc/Shell-Scripts/archive/master.zip">https://github.com/joshpopenyc/Shell-Scripts/archive/master.zip</a>

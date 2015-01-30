@@ -14,4 +14,3 @@ for i in 1 2 3 4 5
 done
 sleep 2
 sudo nano /etc/paths
-exit;

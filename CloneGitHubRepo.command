@@ -1,4 +1,4 @@
-# Shell script for cloning any github repo
+# Shell script for cloning any GitHub repo
 #
 # *NOTE* - The best use of this command file is to place it in the root folder where all of your 
 #	   git repos are cloned to. That way, you never have to manually clone a repo again. 
@@ -20,9 +20,10 @@ echo -ne '\033[31m#####                                                         
 	sleep .5
 	echo -ne '\033[31m### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### \r\n'
 
-
+# simple method for finding the current directory where this file is located
 cd "$( cd "$( dirname "$0" )" && pwd )"
+# clone into this directory
 git clone https://github.com/$USR/$RPONAME.git
-
+# we are done.. 
 echo "### NEW GITHUB CLONE CREATED AT ""$( cd "$( dirname "$0" )" && pwd )"/$RPONAME
 exit;

@@ -6,8 +6,8 @@ echo ""
 echo "Create FPO Image for Development use"
 
 
-read -p "### Width: " WDTH
-read -p "### Height: " HGHT
+read -p "### Width (do not add px): " WDTH
+read -p "### Height (do not add px): " HGHT
 read -p "### What text would you like displayed on the FPO image? " USRTXT
 
 echo "### Got it.. Give me a sec here.."

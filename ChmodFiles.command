@@ -9,4 +9,4 @@ read -p "### Enter the rights you want to give (777 or 755 are most common):" RG
 chmod $RGHTS "$( cd "$( dirname "$0" )" && pwd )"/*
 
 echo "### CHMOD COMPLETE ###"
-exit;
+/bin/bash

@@ -1,6 +1,7 @@
 # Shell script for cloning any github repo
 #
 # -Josh Pope
+echo ""
 echo "Access and Clone any GitHub Repo"
 
 
@@ -17,3 +18,6 @@ echo -ne '\033[31m#####                                                         
 
 cd "$( cd "$( dirname "$0" )" && pwd )"
 git clone https://github.com/$USR/$RESP.git
+
+echo "### NEW GITHUB CLONE CREATED AT ""$( cd "$( dirname "$0" )" && pwd )"/$RESP
+exit;

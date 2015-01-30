@@ -3,6 +3,13 @@
 #  »»»  This is just a simple shell script to remove
 #       any iMessage logs that may be sitting around
 #       -Josh Pope
+#
+#   *note* this is one of my first shell scripts so it
+#   is a bit gratuitously over-coded.. However, it still
+#   works great. The extra code is specifically there
+#   to provide a somewhat styled visual interface..
+#     -- so as you can see, there are a lot of style-specific
+#        lines of code.. just to see if i could. enjoy
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 (
 

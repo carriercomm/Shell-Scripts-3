@@ -5,7 +5,7 @@
 echo "
 
 ### EDIT HOSTS FILE"
-echo '### Edit the hosts file, the press control-x to exit. Then Y to save.
+echo '### Edit the hosts file, then press control-x to exit. Then Y to save.
 
 Opening hosts file. Prepare to enter your user password.'
 for i in 1 2 3 4 5

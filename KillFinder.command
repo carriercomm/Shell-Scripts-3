@@ -11,3 +11,4 @@ for i in 1 2 3 4 5
 	sleep .2
 done
 echo -e '\n '
+exit;

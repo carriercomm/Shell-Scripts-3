@@ -26,4 +26,4 @@ cd "$( cd "$( dirname "$0" )" && pwd )"
 git clone https://github.com/$USR/$RPONAME.git
 # we are done.. 
 echo "### NEW GITHUB CLONE CREATED AT ""$( cd "$( dirname "$0" )" && pwd )"/$RPONAME
-exit;
+/bin/bash

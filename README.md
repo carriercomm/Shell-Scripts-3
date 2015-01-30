@@ -10,3 +10,8 @@ I keep these in a folder in my dock and use them often.. Especially the CloneRep
 	   git repos are cloned to. That way, you never have to manually clone a repo again. 
 	   Just run this file, enter the GitHub username and repo name, and a folder will be generated
 	   in the directory and populated with the cloned repo files. Tada!
+
+<b>My seconed most used command file is most definitely _GenerateFPOImage.command_</b>
+
+ *NOTE* - This will generate an FPO image with specified width, height and printed text on the image. 
+          It will then copy that link to your clipboard as well as print it to your terminal window.

@@ -1,10 +1,10 @@
-Command line & Shell Scripts I use often
+<b>Command line & Shell Scripts I use often</b>
 
 These are command line (shell) script files that automate common tasks on my apple computer..
 
 I keep these in a folder in my dock and use them often.. Especially the CloneRepo, EditPath, and EditHosts command files.. And just because it is often necessary after editing $PATH, etc, I also have a KillFinder command..
 
-_My most used command file is most definitely CloneRepo.command_
+<b>My most used command file is most definitely _CloneRepo.command_</b>
 
  *NOTE* - The best use of this command file is to place it in the root folder where all of your 
 	   git repos are cloned to. That way, you never have to manually clone a repo again. 

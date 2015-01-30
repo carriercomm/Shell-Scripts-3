@@ -11,7 +11,7 @@ echo "Access and Clone any GitHub Repo"
 
 
 read -p "### Enter the GitHub username containing the repo you're looking to clone:" USR
-read -p "### Enter your repo name:" RESP
+read -p "### Enter your repo name:" RPONAME
 echo "### Note- your repository will clone into the current directory where this command file is located. (it will create a folder titled the same as your repo name)"
 
 echo -ne '\033[31m#####                                                                   \r'
@@ -22,7 +22,7 @@ echo -ne '\033[31m#####                                                         
 
 
 cd "$( cd "$( dirname "$0" )" && pwd )"
-git clone https://github.com/$USR/$RESP.git
+git clone https://github.com/$USR/$RPONAME.git
 
-echo "### NEW GITHUB CLONE CREATED AT ""$( cd "$( dirname "$0" )" && pwd )"/$RESP
+echo "### NEW GITHUB CLONE CREATED AT ""$( cd "$( dirname "$0" )" && pwd )"/$RPONAME
 exit;
